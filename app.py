@@ -4,7 +4,7 @@ import blog
 
 
 def page_not_found(e):
-  return render_template('404.html'), 404
+    return render_template('404.html'), 404
 
 
 app = Flask(__name__)
@@ -31,7 +31,6 @@ def index():
             prompt = request.form['blogExpander']
             blogT = blog.blogSectionExpander(prompt)
             blogExpanded = blogT.replace('\n', '<br>')
-
 
     return render_template('index.html', **locals())
 

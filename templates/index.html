@@ -37,8 +37,11 @@
 
 
 
-        <div class="col-lg-6">
-          1. {{blogTopicIdeas|safe}}
+        <div class="col-lg-6">         
+          {% if blogTopicIdeas %}
+            <p>Blog Topic Ideas on <span class="fst-italic">{{prompt|safe}}</span></p>
+            1. {{blogTopicIdeas|safe}}
+          {% endif %}
         </div>
       </div>
 
@@ -63,7 +66,10 @@
 
 
         <div class="col-lg-6">
-          {{blogSectionIdeas|safe}}
+          {% if blogSectionIdeas %}
+            <p>Blog Section Ideas on <span class="fst-italic">{{prompt|safe}}</span></p>
+            {{blogSectionIdeas|safe}}
+          {% endif %}          
         </div>
       </div>
 
@@ -87,7 +93,10 @@
 
 
         <div class="col-lg-6">
-          {{blogExpanded|safe}}
+          {% if blogExpanded %}
+            <p>Blog Expanded on <span class="fst-italic">{{prompt|safe}}</span></p>
+            {{blogExpanded|safe}}
+          {% endif %}
         </div>
       </div>
 
