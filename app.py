@@ -28,6 +28,11 @@ def index():
             blogSectionIdeas = blogT.replace('\n', '<br>')
 
         if 'form3' in request.form:
+            prompt = request.form['blogIntroduction']
+            blogT = blog.generateBlogIntroduction(prompt)
+            blogIntroduction = blogT.replace('\n', '<br>')
+
+        if 'form4' in request.form:
             prompt = request.form['blogExpander']
             blogT = blog.blogSectionExpander(prompt)
             blogExpanded = blogT.replace('\n', '<br>')

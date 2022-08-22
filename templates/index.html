@@ -40,7 +40,7 @@
         <div class="col-lg-6">         
           {% if blogTopicIdeas %}
             <p>Blog Topic Ideas on <span class="fst-italic">{{prompt|safe}}</span></p>
-            1. {{blogTopicIdeas|safe}}
+            <p id="blogTopicIdeas">1. {{blogTopicIdeas|safe}}</p>
           {% endif %}
         </div>
       </div>
@@ -68,8 +68,35 @@
         <div class="col-lg-6">
           {% if blogSectionIdeas %}
             <p>Blog Section Ideas on <span class="fst-italic">{{prompt|safe}}</span></p>
-            {{blogSectionIdeas|safe}}
+            <p id="blogSectionIdeas">{{blogSectionIdeas|safe}}</p>
           {% endif %}          
+        </div>
+      </div>
+
+      <br>
+      <hr>
+      <br>
+
+      <div class="row">
+        <div class="col-lg-6">
+          <form class="" action="/" method="post">
+            <div class="mb-3">
+              <label for="blogIntroduction" class="form-label">Enter the Blog title you want to write introduction about</label>
+              <input type="text" class="form-control" id="blogIntroduction" name="blogIntroduction" placeholder="Enter the blog title for getting introduction">
+            </div>
+            <input type="hidden" name="form3" value="form3">
+
+            <button type="submit" class="btn btn-primary">Write introduction on the title</button>
+          </form>
+        </div>
+
+
+
+        <div class="col-lg-6">
+          {% if blogIntroduction %}
+            <p>Blog introduction on <span class="fst-italic">{{prompt|safe}}</span></p>
+            <p id="blogIntroduction">{{blogIntroduction|safe}}</p>
+          {% endif %}
         </div>
       </div>
 
@@ -84,7 +111,7 @@
               <label for="blogExpander" class="form-label">Enter the Blog section title you want to expand</label>
               <input type="text" class="form-control" id="blogExpander" name="blogExpander" placeholder="Enter the blog section title">
             </div>
-            <input type="hidden" name="form3" value="form3">
+            <input type="hidden" name="form4" value="form4">
 
             <button type="submit" class="btn btn-primary">Expand on the title</button>
           </form>
@@ -95,10 +122,12 @@
         <div class="col-lg-6">
           {% if blogExpanded %}
             <p>Blog Expanded on <span class="fst-italic">{{prompt|safe}}</span></p>
-            {{blogExpanded|safe}}
+            <p id="blogExpanded">{{blogExpanded|safe}}</p>
           {% endif %}
         </div>
       </div>
+
+
 
 
     </div>
